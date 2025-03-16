@@ -37,11 +37,19 @@ jobs:
         with:
           bun-version: latest
           
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      # Remove Node.js setup with npm cache since we're using Bun
+      # and add Bun-specific caching
+      - name: Get bun store directory
+        id: bun-store-dir
+        run: echo "dir=$(bun pm cache)" >> $GITHUB_OUTPUT
+        
+      - name: Cache bun dependencies
+        uses: actions/cache@v3
         with:
-          node-version: 20
-          cache: npm
+          path: ${{ steps.bun-store-dir.outputs.dir }}
+          key: ${{ runner.os }}-bun-store-${{ hashFiles('**/bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-store-
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -54,8 +62,8 @@ jobs:
         
       - name: Build with VitePress
         run: |
-          npm run docs:build
-          ls -la dist || echo "dist directory not found"
+          bun run docs:build
+          touch dist/.nojekyll # Ensure Jekyll doesn't process the site
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
