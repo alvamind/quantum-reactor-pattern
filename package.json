@@ -14,8 +14,8 @@
     "clean": "clean",
     "split-code": "split-code source=combined.ts markers=src/,lib/ outputDir=./output",
     "publish-npm": "publish-npm patch",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   }
 }

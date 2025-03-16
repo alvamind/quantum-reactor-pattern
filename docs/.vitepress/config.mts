@@ -10,7 +10,7 @@ export default withPwa(defineConfig({
   title: 'Quantum Reactor Pattern',
   description: 'A React Architecture Design Pattern combining atomic design, Recoil, shadcn, and event-driven architecture',
   base: '/', //  IMPORTANT: Set this if deploying to a subdirectory.  e.g., '/docs/'
-  outDir: './dist', //  Explicit output directory
+  outDir: '../dist', //  Updated to output to project root dist directory
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
@@ -239,7 +239,7 @@ export default withPwa(defineConfig({
     await new Promise<void>((resolve) => writeStream.on('finish', () => resolve()))
   },
   pwa: {
-    outDir: './dist',
+    outDir: '../dist', // Updated to match the main outDir path
     registerType: 'autoUpdate',
     devOptions: {
       enabled: true
