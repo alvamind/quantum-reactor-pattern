@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "alvamind-tools": "^1.0.23"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "source": "generate-source output=documentation.md exclude=dist/,node_modules/,.git/",
+    "commit": "commit",
+    "clean": "clean",
+    "split-code": "split-code source=combined.ts markers=src/,lib/ outputDir=./output",
+    "publish-npm": "publish-npm patch"
+  }
+}
