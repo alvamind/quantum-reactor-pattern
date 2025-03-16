@@ -5,7 +5,7 @@ hero:
   text: "A Modern React Architecture"
   tagline: "Build scalable, maintainable React applications with atomic design, Recoil state management, and event-driven architecture"
   image:
-    src: https://assets.grok.com/users/964cc2ad-7a28-4bc6-acc0-545e9b1e2d9e/rKZIoFgZW3DmXEbc-generated_image.jpg
+    src: /image.png
     alt: Quantum Reactor Pattern
   actions:
     - theme: brand
@@ -16,7 +16,7 @@ hero:
       link: /guide/introduction
     - theme: alt
       text: 💻 View on GitHub
-      link: https://github.com/yourusername/quantum-reactor-pattern
+      link: https://github.com/alvamind/quantum-reactor-pattern-doc-vitepress
 
 features:
   - icon: 📊
@@ -104,7 +104,7 @@ npm run dev
 <div class="community-section">
   <a href="https://discord.gg/quantum-reactor" class="community-link">Discord</a>
   <a href="https://twitter.com/quantumreactor" class="community-link">Twitter</a>
-  <a href="https://github.com/yourusername/quantum-reactor-pattern/discussions" class="community-link">GitHub Discussions</a>
+  <a href="https://github.com/alvamind/quantum-reactor-pattern-doc-vitepress/discussions" class="community-link">GitHub Discussions</a>
 </div>
 
 <style>
