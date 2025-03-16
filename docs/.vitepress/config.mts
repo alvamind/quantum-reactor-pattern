@@ -16,27 +16,27 @@ export default withPwa(defineConfig({
   themeConfig: {
     logo: '/images/quantum-reactor-logo.svg',
     // Add search configuration
-    search: {
-      provider: 'local',
-      options: {
-        detailedView: true,
-        translations: {
-          button: {
-            buttonText: 'Search Documentation',
-            buttonAriaLabel: 'Search documentation'
-          },
-          modal: {
-            noResultsText: 'No results for',
-            resetButtonTitle: 'Clear search query',
-            footer: {
-              selectText: 'to select',
-              navigateText: 'to navigate',
-              closeText: 'to close'
-            }
-          }
-        }
-      }
-    },
+    // search: {
+    //   provider: 'local',
+    //   options: {
+    //     detailedView: true,
+    //     translations: {
+    //       button: {
+    //         buttonText: 'Search Documentation',
+    //         buttonAriaLabel: 'Search documentation'
+    //       },
+    //       modal: {
+    //         noResultsText: 'No results for',
+    //         resetButtonTitle: 'Clear search query',
+    //         footer: {
+    //           selectText: 'to select',
+    //           navigateText: 'to navigate',
+    //           closeText: 'to close'
+    //         }
+    //       }
+    //     }
+    //   }
+    // },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/introduction' },  // Updated to point to introduction
@@ -177,18 +177,6 @@ export default withPwa(defineConfig({
       copyright: 'Copyright © 2023-present'
     },
   },
-  markdown: {
-    theme: {
-      light: 'vitesse-light',
-      dark: 'vitesse-dark'
-    },
-    // Use dynamic import with ESM syntax
-    async config(md) {
-      // ESM-compatible import
-      const mathjax = await import('markdown-it-mathjax3');
-      md.use(mathjax.default);
-    }
-  },
   head: [
     // Basic Meta Tags
     ['meta', { name: 'author', content: 'Your Name' }],  // Replace with your name/organization
@@ -226,11 +214,19 @@ export default withPwa(defineConfig({
   vite: {
     build: {
       minify: 'esbuild', // Or 'terser' - terser is slower but sometimes produces slightly smaller bundles
+      // Increase chunk size limit to avoid warnings
+      chunkSizeWarningLimit: 600,
       rollupOptions: {
         output: {
-          // Example of manual chunking (adjust as needed for your project)
+          // Improve chunking strategy
           manualChunks(id) {
             if (id.includes('node_modules')) {
+              if (id.includes('mark.js')) {
+                return 'search-vendor';
+              }
+              if (id.includes('minisearch') || id.includes('search')) {
+                return 'search-vendor';
+              }
               return 'vendor';
             }
           }
@@ -238,7 +234,13 @@ export default withPwa(defineConfig({
       }
     },
     ssr: {
-      noExternal: ['@kobalte/core']
+      // Mark problematic dependencies as external in SSR
+      noExternal: ['@kobalte/core'],
+      external: ['mark.js']
+    },
+    // Add optimizeDeps configuration to properly handle mark.js
+    optimizeDeps: {
+      include: ['mark.js/src/vanilla.js']
     }
   },
   transformPageData(pageData) {
