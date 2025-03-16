@@ -79,7 +79,7 @@ import { useRecoilCallback } from 'recoil';
 import { counterStateAtom } from '../atoms/counterAtoms';
 
 // Define event types
-type CounterEvent = 
+type CounterEvent =
   | { type: 'INCREMENT' }
   | { type: 'DECREMENT' }
   | { type: 'RESET' };
@@ -156,7 +156,7 @@ export function Counter() {
 ## Complete Example
 
 You can view the complete code for this example in our GitHub repository:
-[Simple Counter Example](https://github.com/yourusername/quantum-reactor-pattern/tree/main/examples/counter)
+[Simple Counter Example](https://github.com/alvamind/quantum-reactor-pattern/tree/main/examples/counter)
 
 ## Key Benefits Demonstrated
 

@@ -144,7 +144,7 @@ export default {
       ]
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/quantum-reactor-pattern' }
+      { icon: 'github', link: 'https://github.com/alvamind/quantum-reactor-pattern' }
     ],
     footer: {
       message: 'Released under the MIT License.',
@@ -172,7 +172,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: https://github.com/yourusername/quantum-reactor-pattern
+      link: https://github.com/alvamind/quantum-reactor-pattern
 
 features:
   - icon: 🧪

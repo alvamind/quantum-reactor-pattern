@@ -16,7 +16,7 @@ hero:
       link: /guide/introduction
     - theme: alt
       text: 💻 View on GitHub
-      link: https://github.com/alvamind/quantum-reactor-pattern-doc-vitepress
+      link: https://github.com/alvamind/quantum-reactor-pattern
 
 features:
   - icon: 📊
@@ -104,7 +104,7 @@ npm run dev
 <div class="community-section">
   <a href="https://discord.gg/quantum-reactor" class="community-link">Discord</a>
   <a href="https://twitter.com/quantumreactor" class="community-link">Twitter</a>
-  <a href="https://github.com/alvamind/quantum-reactor-pattern-doc-vitepress/discussions" class="community-link">GitHub Discussions</a>
+  <a href="https://github.com/alvamind/quantum-reactor-pattern/discussions" class="community-link">GitHub Discussions</a>
 </div>
 
 <style>

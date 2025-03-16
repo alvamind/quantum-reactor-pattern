@@ -9,7 +9,7 @@ const links: { url: string, lastmod: number | undefined }[] = []
 export default withPwa(defineConfig({
   title: 'Quantum Reactor Pattern',
   description: 'A React Architecture Design Pattern combining atomic design, Recoil, shadcn, and event-driven architecture',
-  base: '/', //  IMPORTANT: Set this if deploying to a subdirectory.  e.g., '/docs/'
+  base: '/quantum-reactor-pattern/', // Updated base path to match desired GitHub Pages URL
   outDir: '../dist', //  Updated to output to project root dist directory
   cleanUrls: true,
   lastUpdated: true,
@@ -147,7 +147,7 @@ export default withPwa(defineConfig({
       ]
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/quantum-reactor-pattern' }  // Replace with your repo
+      { icon: 'github', link: 'https://github.com/alvamind/quantum-reactor-pattern' }  // Replace with your repo
     ],
     footer: {
       message: 'Released under the MIT License.',
@@ -187,7 +187,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'twitter:creator', content: '@yourtwitterhandle' }], // Replace with your Twitter handle
 
     // Favicon (place these files in your /public directory)
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/quantum-reactor-pattern/favicon.svg' }],
     ['link', { rel: 'alternate icon', href: '/favicon.ico' }],
     ['link', { rel: 'mask-icon', href: '/favicon.svg', color: '#ffffff' }],
 
