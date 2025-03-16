@@ -15,6 +15,9 @@ hero:
       text: 📚 Read Documentation
       link: /guide/introduction
     - theme: alt
+      text: 🤖 AI Development Guide
+      link: /advanced/ai-prompt
+    - theme: alt
       text: 💻 View on GitHub
       link: https://github.com/alvamind/quantum-reactor-pattern
 

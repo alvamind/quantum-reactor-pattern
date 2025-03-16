@@ -15,6 +15,28 @@ export default withPwa(defineConfig({
   lastUpdated: true,
   themeConfig: {
     logo: '/images/quantum-reactor-logo.svg',
+    // Add search configuration
+    search: {
+      provider: 'local',
+      options: {
+        detailedView: true,
+        translations: {
+          button: {
+            buttonText: 'Search Documentation',
+            buttonAriaLabel: 'Search documentation'
+          },
+          modal: {
+            noResultsText: 'No results for',
+            resetButtonTitle: 'Clear search query',
+            footer: {
+              selectText: 'to select',
+              navigateText: 'to navigate',
+              closeText: 'to close'
+            }
+          }
+        }
+      }
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/introduction' },  // Updated to point to introduction
@@ -120,6 +142,7 @@ export default withPwa(defineConfig({
             { text: 'Performance Optimization', link: '/advanced/performance' },
             { text: 'Migration Guide', link: '/advanced/migration' },
             { text: 'Comparison with Other Patterns', link: '/advanced/comparison' },
+            { text: 'AI Development Prompts', link: '/advanced/ai-prompt' },
           ]
         },
         {

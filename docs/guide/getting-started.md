@@ -1,8 +1,12 @@
 # Getting Started with Quantum Reactor Pattern
 
+::: info What is Quantum Reactor?
 The Quantum Reactor Pattern provides a comprehensive architectural approach to building React applications that are maintainable, testable, and scalable.
+:::
 
 ## Prerequisites
+
+Before you begin, ensure you have the following:
 
 - Node.js 14.0+
 - npm or yarn
@@ -10,42 +14,63 @@ The Quantum Reactor Pattern provides a comprehensive architectural approach to b
 
 ## Create a New Project
 
-The easiest way to get started is using our CLI tool:
+::: tip Fast Track
+The easiest way to get started is using our CLI tool which sets up everything automatically.
+:::
 
-```bash
-# Using npm
+::: code-group
+
+```bash [npm]
 npm create quantum-reactor-app my-app
+```
 
-# Using yarn
+```bash [yarn]
 yarn create quantum-reactor-app my-app
+```
 
-# Using pnpm
+```bash [pnpm]
 pnpm create quantum-reactor-app my-app
 ```
+
+:::
 
 This will set up a new project with all the necessary dependencies and the Quantum Reactor Pattern file structure.
 
 ## Manual Setup
 
+::: details Manual Setup Instructions
+
 If you prefer to set up manually or integrate into an existing project:
 
-1. Create a new React project:
+### 1. Create a new React project
 
-```bash
+::: code-group
+
+```bash [npm]
 npx create-react-app my-app --template typescript
-# or
+```
+
+```bash [yarn]
 yarn create react-app my-app --template typescript
 ```
 
-2. Install the required dependencies:
+:::
 
-```bash
+### 2. Install the required dependencies
+
+::: code-group
+
+```bash [npm]
 npm install recoil tailwindcss shadcn-ui @types/uuid uuid
-# or
+```
+
+```bash [yarn]
 yarn add recoil tailwindcss shadcn-ui @types/uuid uuid
 ```
 
-3. Set up the project structure:
+:::
+
+### 3. Set up the project structure
 
 ```
 /src
@@ -64,11 +89,17 @@ yarn add recoil tailwindcss shadcn-ui @types/uuid uuid
   /utils           # Pure utility functions
 ```
 
+:::
+
 ## The First Quantum Component
 
 Let's create a simple counter component using the Quantum Reactor Pattern:
 
-1. Create the schema:
+### Step 1: Create the schema
+
+::: warning Schema First Development
+In Quantum Reactor Pattern, we always start by defining our state schema before implementation.
+:::
 
 ```typescript
 // schema/CounterSchema.ts
@@ -83,7 +114,7 @@ export const initialCounterState: CounterState = {
 };
 ```
 
-2. Create the atom:
+### Step 2: Create the atom
 
 ```typescript
 // quantum/atoms/counterAtom.ts
@@ -96,7 +127,11 @@ export const counterStateAtom = atom<CounterState>({
 });
 ```
 
-3. Define events:
+### Step 3: Define events
+
+::: tip Event Handler Pattern
+Event handlers abstract state mutations, providing a clear interface between components and state logic.
+:::
 
 ```typescript
 // quantum/events/counterEvents.ts
@@ -143,7 +178,11 @@ export const useCounterEvents = () => {
 };
 ```
 
-4. Create a custom hook:
+### Step 4: Create a custom hook
+
+::: tip Custom Hooks
+Custom hooks create a clean API for components, abstracting state management and event handling.
+:::
 
 ```typescript
 // hooks/useCounter.ts
@@ -165,7 +204,7 @@ export const useCounter = () => {
 };
 ```
 
-5. Create a Counter component:
+### Step 5: Create a Counter component
 
 ```tsx
 // components/molecules/Counter.tsx
@@ -188,7 +227,7 @@ export const Counter = () => {
 };
 ```
 
-6. Use it in your App:
+### Step 6: Use it in your App
 
 ```tsx
 // App.tsx
@@ -206,11 +245,47 @@ export default function App() {
 }
 ```
 
+## Quantum Component Lifecycle
+
+```mermaid
+flowchart TB
+  A[Schema Definition] --> B[Atom Creation]
+  B --> C[Event Definition]
+  C --> D[Custom Hook]
+  D --> E[Component]
+```
+
 ## Next Steps
 
+::: info Documentation Roadmap
 Now that you've created your first Quantum Reactor component, continue exploring:
+:::
 
-- Learn about [Core Concepts](/guide/core-concepts) of the pattern
-- Understand the [Directory Structure](/guide/directory-structure) in detail
-- Explore [Schema-First Development](/state-management/schema)
-- Build more complex components using the [Atomic Design](/components/overview) principles
+<div class="custom-block next-steps">
+  <div class="items">
+    <div class="item">
+      <a href="/guide/core-concepts">
+        <h4>Core Concepts</h4>
+        <p>Learn about the foundational principles of Quantum Reactor Pattern</p>
+      </a>
+    </div>
+    <div class="item">
+      <a href="/guide/directory-structure">
+        <h4>Directory Structure</h4>
+        <p>Understand the organization and layout of Quantum Reactor projects</p>
+      </a>
+    </div>
+    <div class="item">
+      <a href="/state-management/schema">
+        <h4>Schema-First Development</h4>
+        <p>Explore the methodology of starting with well-defined schemas</p>
+      </a>
+    </div>
+    <div class="item">
+      <a href="/components/overview">
+        <h4>Atomic Design</h4>
+        <p>Build complex interfaces with the atomic design methodology</p>
+      </a>
+    </div>
+  </div>
+</div>
