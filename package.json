@@ -3,6 +3,9 @@
     "alvamind-tools": "^1.0.23"
   },
   "devDependencies": {
+    "@vite-pwa/vitepress": "^0.5.3",
+    "markdown-it-mathjax3": "^4.3.2",
+    "sitemap": "^8.0.0",
     "vitepress": "^1.6.3"
   },
   "scripts": {

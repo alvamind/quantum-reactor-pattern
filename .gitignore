@@ -54,3 +54,4 @@ Thumbs.db
 
 .vitepress/dist
 .vitepress/cache
+dev-dist
